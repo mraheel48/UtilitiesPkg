@@ -1,10 +1,12 @@
 package com.example.utilitiespkg.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.example.utilitiespkg.BlurBuilder
 import com.example.utilitiespkg.databinding.ActivityMainBinding
 import com.example.utilitiespkg.utils.*
 import java.io.File
+
 
 class MainActivity : AppCompatActivity(), OnPositive {
 
@@ -21,10 +23,13 @@ class MainActivity : AppCompatActivity(), OnPositive {
             )
         }
 
+
         val encoderSample: String = "this is a message"
 
         binding.button2.setOnClickListener {
             this.toast(null)
+            
+            // val blurredBitmap = BlurBuilder.blur(getActivity(), originalBitmap)
             d("myEncode", "${getMimeType(File("text.txt"))}")
         }
 
