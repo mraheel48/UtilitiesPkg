@@ -15,23 +15,26 @@ class MainActivity : AppCompatActivity(), OnPositive {
         setContentView(binding.root)
 
         binding.button.setOnClickListener {
-            showAlert("this is utils dialog",
-            "this is message ","Yes","Not",null,this)
+            showAlert(
+                "this is utils dialog",
+                "this is message ", "Yes", "Not", null, this
+            )
         }
 
-        val encoderSample :String = "this is a message"
+        val encoderSample: String = "this is a message"
 
         binding.button2.setOnClickListener {
-            d("myEncode","${getMimeType(File("text.txt"))}")
+            this.toast(null)
+            d("myEncode", "${getMimeType(File("text.txt"))}")
         }
 
     }
 
     override fun onYes() {
-        d("myDialog","Dialog Yes Click")
+        d("myDialog", "Dialog Yes Click")
     }
 
     override fun onNo() {
-        d("myDialog","Dialog No Click")
+        d("myDialog", "Dialog No Click")
     }
 }
